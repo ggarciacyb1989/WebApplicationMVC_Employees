@@ -1,0 +1,24 @@
+@model string;
+@{
+    ViewData["Title"] = "OperationFailed";
+}
+
+<h1>Operation Failed</h1>
+@{
+    var errorMessage = "The record was not ";
+    switch (Model)
+    {
+        case "addCode":
+            errorMessage += "Added";
+            <h2>@errorMessage</h2>
+            break;
+        case "updateCode":
+            errorMessage += "Updated";
+            <h2>@errorMessage</h2>
+            break;
+        case "deleteCode":
+            errorMessage += "Deleted";
+            <h2>@errorMessage</h2>
+            break;
+    }
+}
